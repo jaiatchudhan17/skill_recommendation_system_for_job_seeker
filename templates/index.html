@@ -110,6 +110,17 @@
                                     {% endfor %}
                                 </ul>
                             </div>
+                            <!-- Companies for selected job role -->
+                            {% if selected_job_companies %}
+                            <div class="results-block">
+                                <h3><i class="fas fa-building"></i> Top Companies Hiring for {{ selected_job }}</h3>
+                                <ul class="skills-list">
+                                    {% for company in selected_job_companies %}
+                                        <li><a href="{{ company.url }}" target="_blank" rel="noopener">{{ company.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
                             {% if unwanted_skills %}
                             <div class="results-block">
                                 <h3><i class="fas fa-exclamation-triangle"></i> Unwanted Skills Identified</h3>
@@ -131,6 +142,17 @@
                                             <li>{{ skill }}</li>
                                         {% endfor %}
                                     </ul>
+                                    <!-- Companies for suggested job role -->
+                                    {% if job_suggestion_companies[job] %}
+                                    <div class="suggested-job-companies">
+                                        <span>Top Companies:</span>
+                                        <ul class="skills-list">
+                                            {% for company in job_suggestion_companies[job] %}
+                                                <li><a href="{{ company.url }}" target="_blank" rel="noopener">{{ company.name }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    {% endif %}
                                     {% endfor %}
                                 </div>
                             </div>

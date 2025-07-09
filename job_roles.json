@@ -1,19 +1,145 @@
 {
   "job_roles": {
-    "Software Developer": ["Python", "Java", "Data Structures", "Algorithms", "Git", "C++", "OOP", "Debugging"],
-    "Data Scientist": ["Python", "R", "SQL", "Machine Learning", "Data Visualization", "Deep Learning", "Statistics", "Pandas"],
-    "UI/UX Designer": ["Design Thinking", "Wireframing", "Prototyping", "Figma", "Sketch", "Adobe XD", "User Research", "Usability Testing"],
-    "Front-End Developer": ["HTML", "CSS", "JavaScript", "React", "Vue.js", "Responsive Design", "Git"],
-    "Back-End Developer": ["Node.js", "Express.js", "SQL", "MongoDB", "Java", "REST APIs", "Python", "Django"],
-    "Machine Learning Engineer": ["Python", "TensorFlow", "Keras", "PyTorch", "Deep Learning", "ML Algorithms", "Data Preprocessing"],
-    "Product Manager": ["Product Strategy", "Business Acumen", "Agile Methodology", "Market Research", "Leadership", "Roadmapping"],
-    "DevOps Engineer": ["Docker", "Kubernetes", "AWS", "CI/CD", "Linux", "Cloud Infrastructure", "Terraform"],
-    "Digital Marketer": ["SEO", "Content Marketing", "Google Analytics", "Social Media", "Email Marketing", "PPC", "Copywriting"],
-    "Accountant": ["Financial Reporting", "Taxation", "Excel", "Auditing", "Bookkeeping", "Payroll", "Budgeting"],
-    "HR Specialist": ["Recruitment", "Onboarding", "Employee Relations", "HRIS", "Payroll", "Compliance", "Training & Development"],
-    "Business Analyst": ["Requirement Gathering", "Process Mapping", "SQL", "Data Analysis", "Stakeholder Management", "Presentation Skills"],
-    "Network Engineer": ["TCP/IP", "Routing", "Switching", "Firewall", "Cisco", "Network Security", "Troubleshooting"],
-    "Teacher": ["Lesson Planning", "Classroom Management", "Assessment", "Subject Knowledge", "Communication", "EdTech Tools"]
+    "Software Developer": {
+      "skills": ["Python", "Java", "Data Structures", "Algorithms", "Git", "C++", "OOP", "Debugging"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Data Scientist": {
+      "skills": ["Python", "R", "SQL", "Machine Learning", "Data Visualization", "Deep Learning", "Statistics", "Pandas"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "UI/UX Designer": {
+      "skills": ["Design Thinking", "Wireframing", "Prototyping", "Figma", "Sketch", "Adobe XD", "User Research", "Usability Testing"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Front-End Developer": {
+      "skills": ["HTML", "CSS", "JavaScript", "React", "Vue.js", "Responsive Design", "Git"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Back-End Developer": {
+      "skills": ["Node.js", "Express.js", "SQL", "MongoDB", "Java", "REST APIs", "Python", "Django"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Machine Learning Engineer": {
+      "skills": ["Python", "TensorFlow", "Keras", "PyTorch", "Deep Learning", "ML Algorithms", "Data Preprocessing"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Product Manager": {
+      "skills": ["Product Strategy", "Business Acumen", "Agile Methodology", "Market Research", "Leadership", "Roadmapping"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "DevOps Engineer": {
+      "skills": ["Docker", "Kubernetes", "AWS", "CI/CD", "Linux", "Cloud Infrastructure", "Terraform"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Digital Marketer": {
+      "skills": ["SEO", "Content Marketing", "Google Analytics", "Social Media", "Email Marketing", "PPC", "Copywriting"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Accountant": {
+      "skills": ["Financial Reporting", "Taxation", "Excel", "Auditing", "Bookkeeping", "Payroll", "Budgeting"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "HR Specialist": {
+      "skills": ["Recruitment", "Onboarding", "Employee Relations", "HRIS", "Payroll", "Compliance", "Training & Development"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Business Analyst": {
+      "skills": ["Requirement Gathering", "Process Mapping", "SQL", "Data Analysis", "Stakeholder Management", "Presentation Skills"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Network Engineer": {
+      "skills": ["TCP/IP", "Routing", "Switching", "Firewall", "Cisco", "Network Security", "Troubleshooting"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    },
+    "Teacher": {
+      "skills": ["Lesson Planning", "Classroom Management", "Assessment", "Subject Knowledge", "Communication", "EdTech Tools"],
+      "companies": [
+        {"name": "Wipro", "url": "https://careers.wipro.com/"},
+        {"name": "TCS", "url": "https://www.tcs.com/careers"},
+        {"name": "Infosys", "url": "https://www.infosys.com/careers/"},
+        {"name": "HCL", "url": "https://www.hcltech.com/careers"},
+        {"name": "Tech Mahindra", "url": "https://careers.techmahindra.com/"}
+      ]
+    }
   },
   "certifications": {
     "Software Developer": ["Certified Python Developer", "Oracle Certified Java Programmer", "Microsoft Certified: Azure Developer Associate", "Git Essentials Training"],

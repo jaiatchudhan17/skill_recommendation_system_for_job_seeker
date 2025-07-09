@@ -162,6 +162,16 @@ def index():
                             if isinstance(job, str):
                                 job_suggestions[job] = ["AI-suggested based on your skills"]
                         
+                        # Get companies for selected job
+                        selected_job_companies = job_roles[selected_job]["companies"] if "companies" in job_roles[selected_job] else []
+                        # Get companies for suggested jobs
+                        job_suggestion_companies = {}
+                        for job in job_suggestions:
+                            if job in job_roles and "companies" in job_roles[job]:
+                                job_suggestion_companies[job] = job_roles[job]["companies"]
+                            else:
+                                job_suggestion_companies[job] = []
+                        
                         return render_template(
                             "index.html",
                             job_roles=job_roles.keys(),
@@ -171,6 +181,8 @@ def index():
                             recommended_certifications=job_certifications,
                             unwanted_skills=unwanted_skills,
                             job_suggestions=job_suggestions,
+                            selected_job_companies=selected_job_companies,
+                            job_suggestion_companies=job_suggestion_companies,
                             error_message=None,
                             used_gemini=True
                         )
@@ -183,10 +195,20 @@ def index():
             
             # Traditional analysis (fallback or default)
             extracted_skills = extract_skills_from_resume(resume_text)
-            required_skills = job_roles[selected_job]
+            required_skills = job_roles[selected_job]["skills"] if "skills" in job_roles[selected_job] else job_roles[selected_job]
             recommended_skills = [skill for skill in required_skills if skill not in extracted_skills]
             job_certifications = certifications.get(selected_job, [])
             unwanted_skills, job_suggestions = suggest_jobs_for_unwanted_skills(extracted_skills, selected_job)
+
+            # Get companies for selected job
+            selected_job_companies = job_roles[selected_job]["companies"] if "companies" in job_roles[selected_job] else []
+            # Get companies for suggested jobs
+            job_suggestion_companies = {}
+            for job in job_suggestions:
+                if job in job_roles and "companies" in job_roles[job]:
+                    job_suggestion_companies[job] = job_roles[job]["companies"]
+                else:
+                    job_suggestion_companies[job] = []
 
             return render_template(
                 "index.html",
@@ -197,6 +219,8 @@ def index():
                 recommended_certifications=job_certifications,
                 unwanted_skills=unwanted_skills,
                 job_suggestions=job_suggestions,
+                selected_job_companies=selected_job_companies,
+                job_suggestion_companies=job_suggestion_companies,
                 error_message=error_message,
                 used_gemini=False
             )
