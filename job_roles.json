@@ -1,0 +1,35 @@
+{
+  "job_roles": {
+    "Software Developer": ["Python", "Java", "Data Structures", "Algorithms", "Git", "C++", "OOP", "Debugging"],
+    "Data Scientist": ["Python", "R", "SQL", "Machine Learning", "Data Visualization", "Deep Learning", "Statistics", "Pandas"],
+    "UI/UX Designer": ["Design Thinking", "Wireframing", "Prototyping", "Figma", "Sketch", "Adobe XD", "User Research", "Usability Testing"],
+    "Front-End Developer": ["HTML", "CSS", "JavaScript", "React", "Vue.js", "Responsive Design", "Git"],
+    "Back-End Developer": ["Node.js", "Express.js", "SQL", "MongoDB", "Java", "REST APIs", "Python", "Django"],
+    "Machine Learning Engineer": ["Python", "TensorFlow", "Keras", "PyTorch", "Deep Learning", "ML Algorithms", "Data Preprocessing"],
+    "Product Manager": ["Product Strategy", "Business Acumen", "Agile Methodology", "Market Research", "Leadership", "Roadmapping"],
+    "DevOps Engineer": ["Docker", "Kubernetes", "AWS", "CI/CD", "Linux", "Cloud Infrastructure", "Terraform"],
+    "Digital Marketer": ["SEO", "Content Marketing", "Google Analytics", "Social Media", "Email Marketing", "PPC", "Copywriting"],
+    "Accountant": ["Financial Reporting", "Taxation", "Excel", "Auditing", "Bookkeeping", "Payroll", "Budgeting"],
+    "HR Specialist": ["Recruitment", "Onboarding", "Employee Relations", "HRIS", "Payroll", "Compliance", "Training & Development"],
+    "Business Analyst": ["Requirement Gathering", "Process Mapping", "SQL", "Data Analysis", "Stakeholder Management", "Presentation Skills"],
+    "Network Engineer": ["TCP/IP", "Routing", "Switching", "Firewall", "Cisco", "Network Security", "Troubleshooting"],
+    "Teacher": ["Lesson Planning", "Classroom Management", "Assessment", "Subject Knowledge", "Communication", "EdTech Tools"]
+  },
+  "certifications": {
+    "Software Developer": ["Certified Python Developer", "Oracle Certified Java Programmer", "Microsoft Certified: Azure Developer Associate", "Git Essentials Training"],
+    "Data Scientist": ["Certified Data Scientist by IBM", "Machine Learning Specialization by Stanford", "Google Data Analytics Professional Certificate", "Microsoft Certified: Azure Data Scientist Associate"],
+    "UI/UX Designer": ["UX Design Professional Certificate by Google", "Certified Adobe XD Designer", "Interaction Design Foundation Membership"],
+    "Front-End Developer": ["Responsive Web Design Certificate", "JavaScript Certification by W3Schools", "Meta Front-End Developer Professional Certificate"],
+    "Back-End Developer": ["Node.js Developer Certification", "SQL for Developers Certificate", "Microsoft Certified: Azure Developer Associate"],
+    "Machine Learning Engineer": ["TensorFlow Developer Certificate", "Certified Machine Learning Engineer by Google", "AWS Certified Machine Learning – Specialty"],
+    "Product Manager": ["Certified Scrum Product Owner (CSPO)", "Agile Certified Practitioner (PMI-ACP)", "Pragmatic Institute Product Management Certification"],
+    "DevOps Engineer": ["AWS Certified DevOps Engineer", "Docker Certified Associate", "Certified Kubernetes Administrator (CKA)", "Microsoft Certified: DevOps Engineer Expert"],
+    "Digital Marketer": ["Google Ads Certification", "HubSpot Content Marketing Certification", "Facebook Blueprint Certification", "Hootsuite Social Marketing Certification"],
+    "Accountant": ["Certified Public Accountant (CPA)", "Chartered Accountant (CA)", "QuickBooks Certified User", "Certified Management Accountant (CMA)"],
+    "HR Specialist": ["SHRM Certified Professional (SHRM-CP)", "Professional in Human Resources (PHR)", "LinkedIn Talent Solutions Certification"],
+    "Business Analyst": ["Certified Business Analysis Professional (CBAP)", "PMI Professional in Business Analysis (PMI-PBA)", "IIBA Entry Certificate in Business Analysis (ECBA)"],
+    "Network Engineer": ["Cisco Certified Network Associate (CCNA)", "CompTIA Network+", "Cisco Certified Network Professional (CCNP)"],
+    "Teacher": ["Certified Teacher (State/Board)", "Google Certified Educator", "TESOL/TEFL Certification"]
+  }
+}
+  

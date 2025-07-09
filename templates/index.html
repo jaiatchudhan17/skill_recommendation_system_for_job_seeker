@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="homepage-container">
+        <!-- Loading Spinner Overlay -->
+        <div id="loading-overlay" class="loading-overlay" aria-live="polite" aria-busy="false" style="display:none;">
+            <div class="spinner"></div>
+            <span class="loading-text">Processing your resume...</span>
+        </div>
+        <!-- Error Message Block -->
+        {% if error_message %}
+        <div class="error-message" role="alert">{{ error_message }}</div>
+        {% endif %}
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1><i class="fas fa-search"></i> Skill Finder</h1>
+                <p class="hero-subtitle">Empower your career journey.<br>Discover your skills, get tailored recommendations, and unlock new opportunities.</p>
+                <a href="#get-started" class="cta-btn">Get Started <i class="fas fa-arrow-down"></i></a>
+            </div>
+            <div class="hero-illustration">
+                <i class="fas fa-lightbulb"></i>
+                <i class="fas fa-user-graduate"></i>
+                <i class="fas fa-chart-line"></i>
+            </div>
+        </section>
+
+        <section id="get-started" class="steps-section">
+            <div class="steps-container">
+                <!-- Step 1: Job Role Selection -->
+                <div class="step-card">
+                    <div class="step-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="step-content">
+                        <h2>1. Choose Your Desired Job Role</h2>
+                        {% if not selected_job %}
+                        <form method="POST" aria-label="Job Role Selection">
+                            <label for="job_role">Select a Job Role:</label>
+                            <select name="job_role" id="job_role">
+                                {% for job in job_roles %}
+                                    <option value="{{ job }}">{{ job }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="btn">Next</button>
+                        </form>
+                        {% else %}
+                        <div class="selected-job">You selected: <span class="highlight">{{ selected_job }}</span></div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Step 2: Resume Upload -->
+                {% if selected_job and not extracted_skills %}
+                <div class="step-card">
+                    <div class="step-icon"><i class="fas fa-file-upload"></i></div>
+                    <div class="step-content">
+                        <h2>2. Upload Your Resume</h2>
+                        <form method="POST" enctype="multipart/form-data" id="resume-form" aria-label="Resume Upload">
+                            <label for="resume">Upload Your Resume (txt/pdf):</label>
+                            <div class="file-drop-area" id="file-drop-area" tabindex="0" aria-label="Drag and drop your resume here or click to select">
+                                <span class="fake-btn">Choose file</span>
+                                <span class="file-msg" id="file-msg">No file selected</span>
+                                <input type="file" name="resume" id="resume" required aria-required="true" accept=".txt,.pdf">
+                            </div>
+                            <label>
+                                <input type="checkbox" name="use_gemini" value="1">
+                                Use AI-powered analysis (Gemini)
+                            </label>
+                            <input type="hidden" name="selected_job" value="{{ selected_job }}">
+                            <button type="submit" class="btn">Submit Resume</button>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Step 3: Results -->
+                {% if extracted_skills %}
+                <div class="step-card results-card">
+                    <div class="step-icon"><i class="fas fa-list-check"></i></div>
+                    <div class="step-content">
+                        <h2>3. Your Skill Insights & Recommendations</h2>
+                        <div class="results-section">
+                            <div class="results-block">
+                                <h3><i class="fas fa-lightbulb"></i> Skills Extracted from Your Resume</h3>
+                                <ul class="skills-list">
+                                    {% for skill in extracted_skills %}
+                                        <li>{{ skill }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="results-block">
+                                <h3><i class="fas fa-plus-circle"></i> Recommended Additional Skills</h3>
+                                <ul class="skills-list">
+                                    {% for skill in recommended_skills %}
+                                        <li>{{ skill }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="results-block">
+                                <h3><i class="fas fa-certificate"></i> Recommended Certifications</h3>
+                                <ul class="skills-list">
+                                    {% for certification in recommended_certifications %}
+                                        <li>{{ certification }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% if unwanted_skills %}
+                            <div class="results-block">
+                                <h3><i class="fas fa-exclamation-triangle"></i> Unwanted Skills Identified</h3>
+                                <ul class="skills-list">
+                                    {% for skill in unwanted_skills %}
+                                        <li>{{ skill }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                            {% if job_suggestions %}
+                            <div class="results-block">
+                                <h3><i class="fas fa-briefcase"></i> Suggested Job Roles for Your Unwanted Skills</h3>
+                                <div class="job-suggestions">
+                                    {% for job, skills in job_suggestions.items() %}
+                                    <h4>{{ job }}</h4>
+                                    <ul class="skills-list">
+                                        {% for skill in skills %}
+                                            <li>{{ skill }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <form method="GET" action="/" aria-label="Start Over">
+                            <button type="submit" class="btn start-over-btn">Start Over</button>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+        <footer>
+            <p>&copy; {{ 2024 }} Skill Finder. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+    // Show loading spinner on form submit
+    const resumeForm = document.getElementById('resume-form');
+    if (resumeForm) {
+        resumeForm.addEventListener('submit', function() {
+            document.getElementById('loading-overlay').style.display = 'flex';
+            document.getElementById('loading-overlay').setAttribute('aria-busy', 'true');
+        });
+    }
+    // Show file name on file select
+    const fileInput = document.getElementById('resume');
+    const fileMsg = document.getElementById('file-msg');
+    if (fileInput && fileMsg) {
+        fileInput.addEventListener('change', function() {
+            fileMsg.textContent = fileInput.files.length ? fileInput.files[0].name : 'No file selected';
+        });
+    }
+    // Drag-and-drop support
+    const fileDropArea = document.getElementById('file-drop-area');
+    if (fileDropArea && fileInput) {
+        fileDropArea.addEventListener('click', () => fileInput.click());
+        fileDropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            fileDropArea.classList.add('dragover');
+        });
+        fileDropArea.addEventListener('dragleave', () => fileDropArea.classList.remove('dragover'));
+        fileDropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            fileDropArea.classList.remove('dragover');
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                fileInput.dispatchEvent(new Event('change'));
+            }
+        });
+    }
+    </script>
+</body>
+</html> 
